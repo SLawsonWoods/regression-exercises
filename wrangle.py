@@ -35,25 +35,25 @@ def new_zillow_data():
 
 
 
-# def get_zillow_data():
-#     '''
-#     This function reads in titanic data from Codeup database, writes data to
-#     a csv file if a local file does not exist, and returns a df.
-#     '''
-#     if os.path.isfile('zillow.csv'):
+def get_zillow_data():
+    '''
+    This function reads in zillow data from Codeup database, writes data to
+    a csv file if a local file does not exist, and returns a df.
+    '''
+    if os.path.isfile('zillow.csv'):
         
-#         # If csv file exists, read in data from csv file.
-#         df = pd.read_csv('zillow.csv', index_col=0)
+        # If csv file exists, read in data from csv file.
+        df = pd.read_csv('zillow.csv', index_col=0)
         
-#     else:
+    else:
         
-#         # Read fresh data from db into a DataFrame.
-#         df = new_zillow_data()
+        # Read fresh data from db into a DataFrame.
+        df = new_zillow_data()
         
-#         # Write DataFrame to a csv file.
-#         df.to_csv('zillow.csv')
+        # Write DataFrame to a csv file.
+        df.to_csv('zillow.csv')
         
-#     return df
+    return df
 
 ############################################## My Functions ##############################################################
 
