@@ -26,7 +26,7 @@ def new_zillow_data():
     write it to a csv file, and returns the df.
     '''
     # Create SQL query.
-    sql_query = 'SELECT bedroomcnt, bathroomcnt, calculatedfinishedsquarefeet,             taxvaluedollarcnt, yearbuilt, taxamount, fips FROM properties_2017'
+    sql_query = 'SELECT bedroomcnt, bathroomcnt, calculatedfinishedsquarefeet,taxvaluedollarcnt, yearbuilt, taxamount, fips FROM properties_2017'
     
     # Read in DataFrame from Codeup db.
     df = pd.read_sql(sql_query, get_connection('zillow'))
@@ -161,7 +161,7 @@ def prepare_zillow(df):
     
     # train/validate/test split
     train_validate, test = train_test_split(df, test_size=.2, random_state=123)
-    train, validate = train_test_split(train_validate, test_size=.3,                     random_state=123)
+    train, validate = train_test_split(train_validate, test_size=.3,random_state=123)
     
     # impute year built using mode
     imputer = SimpleImputer(strategy='most_frequent')
