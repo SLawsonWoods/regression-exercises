@@ -10,10 +10,11 @@ from matplotlib.pyplot import figure
 
 #create pairplot 
 def create_pairplots(df):
-    sns.pairplot(df.drop(columns=cats), kind='reg')
-    cats = ['fips']
-    conts = ['bedroomcnt','bathroomcnt','calculatedfinishedsquarefeet','taxvaluedollarcnt','yearbuilt']
-    plt.show()
+    cats = df.fips
+    sns.pairplot(df, kind='reg')
+    conts = df['bedroomcnt','bathroomcnt','calculatedfinishedsquarefeet','taxvaluedollarcnt','yearbuilt']
+    print(plt.show())
+    
 
 #create a new feature bathroom to bedroom count
 def bathroom_to_bedroom(df):
